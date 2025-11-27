@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router";
 import { Button } from "../components/ui/button";
+import camera2 from "../public/camera2.mp4";
 
 export function WhyChoose() {
   const reasons = [
@@ -100,21 +101,21 @@ export function WhyChoose() {
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1668453814676-c8093305fae6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwaG90b2dyYXBoeSUyMHN0dWRpb3xlbnwxfHx8fDE3NjQxMjkyMzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-            alt="Professional studio"
+          <video
+            autoPlay
+            loop
+            
+            playsInline
             className="w-full h-full object-cover"
-          />
+          >
+            <source
+              src={camera2}
+              type="video/mp4"
+            />
+          </video>
           <div className="absolute inset-0 bg-black/70"></div>
         </div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl mb-4">
-            Why Choose <span className="text-orange-500">TRIP MEDIA</span>
-          </h1>
-          <p className="text-xl text-white/80">
-            The reasons that make us Dubai's leading creative media studio
-          </p>
-        </div>
+   
       </section>
 
       {/* Main Reasons */}

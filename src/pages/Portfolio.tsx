@@ -13,7 +13,7 @@ export function Portfolio() {
     { id: "tourism", name: "Tourism" },
     { id: "corporate", name: "Corporate" },
     { id: "weddings", name: "Weddings" },
-    { id: "Sports", name: "Sports Coverage" },
+    { id: "Sports", name: "Sports Coverages" },
   ];
 
   const portfolioItems = [
@@ -79,13 +79,6 @@ export function Portfolio() {
       title: "Commercial Shoot",
       image: "https://images.unsplash.com/photo-1637348318881-03b4c930a723?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwcGhvdG9ncmFwaHklMjBzaG9vdHxlbnwxfHx8fDE3NjQxNDQ3ODl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       description: "Professional commercial photography",
-    },
-    {
-      id: 10,
-      category: "Sports",
-      title: "Sports Event Coverage",
-      image: "https://www.sportcal.com/wp-content/uploads/sites/32/2025/06/main684869104f513.jpg",
-      description: "Sports event photography and videography",
     },
   ];
 

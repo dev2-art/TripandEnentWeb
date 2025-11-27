@@ -3,6 +3,7 @@ import { Button } from "../components/ui/button";
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { Camera, Video, Award, Users, Sparkles, TrendingUp, Play, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
+import cameraMp4 from "../public/camera.mp4";
 
 export function Home() {
   const features = [
@@ -52,7 +53,7 @@ export function Home() {
             className="w-full h-full object-cover"
           >
             <source
-              src="https://assets.mixkit.co/videos/preview/mixkit-photographer-working-in-a-studio-with-a-model-26310-large.mp4"
+              src={cameraMp4}
               type="video/mp4"
             />
           </video>
@@ -109,7 +110,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section
       <section className="py-20 bg-[#0a0a0a] border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -151,7 +152,7 @@ export function Home() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Features Grid */}
       <section className="py-24 bg-[#0a0a0a]">
