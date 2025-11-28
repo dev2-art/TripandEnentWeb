@@ -144,46 +144,60 @@ export function WhyChoose() {
       </section>
 
       {/* VIDEO SECTION */}
-      <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted={isMuted}
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src={camera2} type="video/mp4" />
-          </video>
-
-          {/* PLAY + MUTE CONTROLS */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-6">
-
-            {/* PLAY / PAUSE BUTTON */}
-            <button
-              onClick={togglePlay}
-              className="p-4 bg-black/60 rounded-full text-white backdrop-blur hover:bg-black/80 transition"
+      <section className="bg-black py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            <video
+              ref={videoRef}
+              autoPlay
+              loop
+              muted={isMuted}
+              playsInline
+              className="w-full h-full object-cover"
             >
-              {isPlaying ? (
-                <CiPause1 className="w-7 h-7 flex-shrink-0" aria-hidden="true" />
-              ) : (
-                <CiPlay1 className="w-7 h-7 flex-shrink-0" aria-hidden="true" />
-              )}
-            </button>
+              <source src={camera2} type="video/mp4" />
+            </video>
+          </div>
 
-            {/* MUTE / UNMUTE */}
-            <button
-              onClick={toggleMute}
-              className="p-4 bg-black/60 rounded-full text-white backdrop-blur hover:bg-black/80 transition"
-            >
-              {isMuted ? (
-                <VolumeX className="w-6 h-6 flex-shrink-0" aria-hidden="true" />
-              ) : (
-                <Volume2 className="w-6 h-6 flex-shrink-0" aria-hidden="true" />
-              )}
-            </button>
-
+          {/* PLAYBACK CONTROLS */}
+          <div className="mt-6 flex flex-col gap-4">
+            <div className="flex items-center gap-4">
+              <button
+                onClick={togglePlay}
+                className="flex items-center gap-3 rounded-full bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/20"
+              >
+                {isPlaying ? (
+                  <>
+                    <CiPause1 className="w-6 h-6" aria-hidden="true" />
+                    Pause Reel
+                  </>
+                ) : (
+                  <>
+                    <CiPlay1 className="w-6 h-6" aria-hidden="true" />
+                    Play Reel
+                  </>
+                )}
+              </button>
+              <button
+                onClick={toggleMute}
+                className="flex items-center gap-3 rounded-full bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/20"
+              >
+                {isMuted ? (
+                  <>
+                    <VolumeX className="w-5 h-5" aria-hidden="true" />
+                    Sound Off
+                  </>
+                ) : (
+                  <>
+                    <Volume2 className="w-5 h-5" aria-hidden="true" />
+                    Sound On
+                  </>
+                )}
+              </button>
+            </div>
+            <p className="text-white/60 text-sm sm:text-base">
+              Controls sit just below the reel so you can play, pause, or toggle audio quickly.
+            </p>
           </div>
         </div>
       </section>
