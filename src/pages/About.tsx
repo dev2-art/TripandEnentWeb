@@ -1,6 +1,10 @@
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { Target, Eye, Award, Users } from "lucide-react";
 import { motion } from "motion/react";
+// Add imports for team images (assuming local assets in public/img; replace with actual file names)
+import photographerImage from "../public/img/photography.jpg";
+import creativeDirectorImage from "../public/img/creative-Dire.jpg";
+import productionTeamImage from "../public/img/Production-team.jpg";
 
 export function About() {
   return (
@@ -168,17 +172,17 @@ export function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                image: "https://images.unsplash.com/photo-1637348318881-03b4c930a723?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwcGhvdG9ncmFwaHklMjBzaG9vdHxlbnwxfHx8fDE3NjQxNDQ3ODl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+                image: photographerImage,
                 title: "Photographers",
                 desc: "Masters of light and composition"
               },
               {
-                image: "https://images.unsplash.com/photo-1727791719116-39761d569f32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwcGhvdG9ncmFwaHklMjBtb2RlbHxlbnwxfHx8fDE3NjQxMzc1OTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+                image: creativeDirectorImage,
                 title: "Creative Directors",
                 desc: "Visionaries shaping brand stories"
               },
               {
-                image: "https://images.unsplash.com/photo-1571645163064-77faa9676a46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBldmVudCUyMGJ1c2luZXNzfGVufDF8fHx8MTc2NDE0MzIxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+                image: productionTeamImage,
                 title: "Production Team",
                 desc: "Experts bringing ideas to life"
               }

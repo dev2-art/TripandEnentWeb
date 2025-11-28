@@ -142,8 +142,8 @@ export function Layout() {
               <div className="space-y-2 text-white/50 text-sm">
                 <p>Dubai Media City</p>
                 <p>Dubai, UAE</p>
-                <p className="hover:text-[#ea580c] transition-colors cursor-pointer">info@tripmedia.ae</p>
-                <p className="hover:text-[#ea580c] transition-colors cursor-pointer">+971 50 123 4567</p>
+                <p className="hover:text-[#ea580c] transition-colors cursor-pointer">hello@tripmediadubai.com</p>
+                <p className="hover:text-[#ea580c] transition-colors cursor-pointer">+971564247927</p>
               </div>
             </div>
           </div>

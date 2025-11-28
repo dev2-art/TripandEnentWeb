@@ -175,8 +175,8 @@ export function Contact() {
                   </div>
                   <div>
                     <h3 className="text-xl mb-2">Phone</h3>
-                    <p className="text-white/70">+971 50 123 4567</p>
-                    <p className="text-white/70">+971 4 567 8901</p>
+                    <p className="text-white/70">+971564247927</p>
+                    {/* <p className="text-white/70">+971 4 567 8901</p> */}
                   </div>
                 </div>
 
@@ -187,8 +187,8 @@ export function Contact() {
                   </div>
                   <div>
                     <h3 className="text-xl mb-2">Email</h3>
-                    <p className="text-white/70">info@tripmedia.ae</p>
-                    <p className="text-white/70">bookings@tripmedia.ae</p>
+                    <p className="text-white/70">hello@tripmediadubai.com</p>
+                    {/* <p className="text-white/70">bookings@tripmedia.ae</p> */}
                   </div>
                 </div>
 
