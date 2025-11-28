@@ -15,11 +15,18 @@ import {
   VolumeX,
   Volume2,
 } from "lucide-react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import { Button } from "../components/ui/button";
-import { useRef, useState } from "react";
-import camera2 from "../public/camera2.mp4";
 import { CiPlay1, CiPause1 } from "react-icons/ci";
+import {
+  motion,
+  useInView,
+  useMotionValue,
+  useTransform,
+  animate,
+} from "motion/react";
+const camera2 = new URL("../public/camera2.mp4", import.meta.url).href;
 
 export function WhyChoose() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -119,6 +126,13 @@ export function WhyChoose() {
     },
   ];
 
+  const stats = [
+    { value: 500, suffix: "+", label: "Successful Projects" },
+    { value: 200, suffix: "+", label: "Satisfied Clients" },
+    { value: 50, suffix: "+", label: "Industry Awards" },
+    { value: 98, suffix: "%", label: "Satisfaction Rate" },
+  ];
+
   return (
     <div className="bg-black text-white">
 
@@ -170,12 +184,12 @@ export function WhyChoose() {
             >
               {isPlaying ? (
                 <>
-                  <CiPause1 className="w-6 h-6" aria-hidden="true" />
+                  <CiPause1 size={24} aria-hidden="true" />
                   Pause Reel
                 </>
               ) : (
                 <>
-                  <CiPlay1 className="w-6 h-6" aria-hidden="true" />
+                  <CiPlay1 size={24} aria-hidden="true" />
                   Play Reel
                 </>
               )}
@@ -307,19 +321,9 @@ export function WhyChoose() {
             <p className="text-xl text-white/60">Numbers that speak for us</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { n: "500+", label: "Successful Projects" },
-              { n: "200+", label: "Satisfied Clients" },
-              { n: "50+", label: "Industry Awards" },
-              { n: "98%", label: "Satisfaction Rate" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-5xl md:text-6xl text-orange-500 mb-2">
-                  {stat.n}
-                </div>
-                <div className="text-white/60">{stat.label}</div>
-              </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <NotebookStat key={stat.label} index={index} {...stat} />
             ))}
           </div>
 
@@ -386,3 +390,86 @@ export function WhyChoose() {
     </div>
   );
 }
+
+interface NotebookStatProps {
+  value: number;
+  suffix?: string;
+  label: string;
+  index: number;
+}
+
+const NotebookStat: React.FC<NotebookStatProps> = ({
+  value,
+  suffix = "",
+  label,
+  index,
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) =>
+    Math.round(latest).toLocaleString()
+  );
+  const displayValue = useTransform(rounded, (latest) => `${latest}${suffix}`);
+
+  useEffect(() => {
+    if (!isInView) return;
+    const controls = animate(count, value, {
+      duration: 1.6,
+      delay: index * 0.15,
+      ease: [0.34, 1, 0.68, 1],
+    });
+    return controls.stop;
+  }, [count, isInView, value, index]);
+
+  return (
+    <motion.div
+      ref={ref}
+      className="text-center"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+    >
+      <div className="relative rounded-3xl border border-white/10 bg-white/[0.01] pb-10 pt-12 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+        {/* Binding holes */}
+        <div className="absolute -top-4 inset-x-0 flex justify-center gap-4">
+          {[...Array(4)].map((_, holeIndex) => (
+            <span
+              key={holeIndex}
+              className="h-3 w-3 rounded-full bg-black/50 border border-white/10 shadow-inner"
+            />
+          ))}
+        </div>
+
+        {/* Notebook background */}
+        <div
+          className="mx-6 rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-8 text-white relative overflow-hidden"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px)",
+            backgroundSize: "100% 26px",
+          }}
+        >
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-b from-white/15 to-transparent"
+            initial={{ rotateX: -80, opacity: 0 }}
+            whileInView={{ rotateX: 0, opacity: 0.2 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: index * 0.15 }}
+            style={{ transformOrigin: "top" }}
+          />
+
+          <motion.span
+            className="block text-5xl md:text-6xl font-semibold text-[#ea580c] drop-shadow-[0_10px_25px_rgba(234,88,12,0.35)]"
+            style={{ fontVariantNumeric: "tabular-nums" }}
+          >
+            {displayValue}
+          </motion.span>
+        </div>
+      </div>
+
+      <p className="mt-4 text-white/70 text-lg">{label}</p>
+    </motion.div>
+  );
+};

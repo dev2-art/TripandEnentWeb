@@ -15,6 +15,12 @@ export function Services() {
   const [currentCategory, setCurrentCategory] = useState(0);
   const [direction, setDirection] = useState(0);
 
+  const floatingOrbs = [
+    { size: 320, top: "-10%", left: "5%", duration: 18, blur: "blur-[90px]" },
+    { size: 220, top: "30%", right: "0%", duration: 22, blur: "blur-[70px]" },
+    { size: 180, bottom: "-5%", left: "25%", duration: 26, blur: "blur-[60px]" },
+  ];
+
   const serviceCategories = [
     {
       id: 1,
@@ -290,22 +296,58 @@ export function Services() {
 
       {/* Services Carousel */}
       <section className="py-24 bg-[#0a0a0a] relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Animated ambient blobs */}
+        <div className="pointer-events-none absolute inset-0 opacity-60">
+          {floatingOrbs.map((orb, index) => (
+            <motion.div
+              key={index}
+              aria-hidden="true"
+              className={`absolute rounded-full bg-gradient-to-br from-[#ea580c]/25 via-[#c2410c]/20 to-transparent ${orb.blur}`}
+              style={{
+                width: orb.size,
+                height: orb.size,
+                top: orb.top,
+                left: orb.left,
+                right: orb.right,
+                bottom: orb.bottom,
+              }}
+              animate={{
+                x: [0, 40, -30, 0],
+                y: [0, -30, 20, 0],
+                rotate: [0, 15, -10, 0],
+              }}
+              transition={{
+                duration: orb.duration,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Category Navigation */}
-          <div className="flex flex-wrap justify-center gap-3 mb-16">
+          <div className="flex flex-wrap justify-center gap-3 mb-16 relative">
             {serviceCategories.map((category, index) => (
               <motion.button
                 key={category.id}
                 onClick={() => goToSlide(index)}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className={`px-6 py-3 rounded-full transition-all ${
+                className={`relative overflow-hidden px-6 py-3 rounded-full border border-white/10 transition-all text-sm tracking-wide ${
                   currentCategory === index
-                    ? "bg-[#ea580c] text-white"
-                    : "bg-white/5 text-white/70 hover:bg-white/10 border border-white/10"
+                    ? "text-white shadow-[0_12px_35px_rgba(234,88,12,0.25)]"
+                    : "text-white/70 hover:text-white bg-white/5"
                 }`}
               >
-                {category.title}
+                {currentCategory === index && (
+                  <motion.span
+                    layoutId="category-pill"
+                    className="absolute inset-0 bg-gradient-to-r from-[#ea580c] to-[#c2410c]"
+                    transition={{ type: "spring", stiffness: 400, damping: 35 }}
+                  />
+                )}
+                <span className="relative z-10">{category.title}</span>
               </motion.button>
             ))}
           </div>
@@ -326,7 +368,7 @@ export function Services() {
                 }}
               >
                 {/* Category Hero - Updated to use video with poster fallback */}
-                <div className="relative h-96 rounded-2xl overflow-hidden mb-12">
+                <div className="relative h-96 rounded-2xl overflow-hidden mb-12 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
                   {serviceCategories[currentCategory].bgVideo ? (
                     <motion.video
                       autoPlay

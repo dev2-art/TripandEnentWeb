@@ -24,5 +24,3 @@ ehthumbs.db
 # Vercel
 .vercel/
 
-.vercel
-.env*.local
