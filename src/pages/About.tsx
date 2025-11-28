@@ -2,8 +2,8 @@ import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { Target, Eye, Award, Users } from "lucide-react";
 import { motion } from "motion/react";
 // Add imports for team images (assuming local assets in public/img; replace with actual file names)
-import photographerImage from "../public/img/photography.jpg";
-import creativeDirectorImage from "../public/img/creative-Dire.jpg";
+import photographerImage from "../public/img/Photography.jpg";
+import creativeDirectorImage from "../public/img/Creative-Dire.jpg";
 import productionTeamImage from "../public/img/Production-team.jpg";
 
 export function About() {

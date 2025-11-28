@@ -13,7 +13,7 @@ export function Portfolio() {
     { id: "tourism", name: "Tourism" },
     { id: "corporate", name: "Corporate" },
     { id: "weddings", name: "Weddings" },
-    { id: "Sports", name: "Sports Coverages" },
+    { id: "sports", name: "Sports Coverages" },
   ];
 
   const portfolioItems = [

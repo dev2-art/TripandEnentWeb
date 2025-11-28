@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import camera3 from "../public/camera3.mp4";
-import weddingVideo from "../public/wedding.mp4";
-import brandingVideo from "../public/branding.mp4";
-import travelVideo from "../public/travelling.mp4";
-import sportsVideo from "../public/sports.mp4";
+import weddingVideo from "../public/Wedding.mp4";
+import brandingVideo from "../public/Branding.mp4";
+import travelVideo from "../public/Travelling.mp4";
+import sportsVideo from "../public/Sports.mp4";
 import DigitalMarketing from "../public/img/DigitalMarketing.jpg";
 
 export function Services() {
