@@ -1,5 +1,5 @@
 {
-  "name": "Website Content Structure",
+  "name": "website-content-structure",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -41,7 +41,6 @@
     "react-day-picker": "^8.10.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.55.0",
-    "react-icons": "^5.5.0",
     "react-resizable-panels": "^2.1.7",
     "react-router": "*",
     "recharts": "^2.15.2",
@@ -52,7 +51,7 @@
   "devDependencies": {
     "@types/node": "^20.10.0",
     "@vitejs/plugin-react-swc": "^3.10.2",
-    "vite": "^5.x.x"
+"vite": "^5.x.x"
   },
   "scripts": {
     "dev": "vite",
