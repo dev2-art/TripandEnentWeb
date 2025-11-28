@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Builds
+build/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS junk
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# IDE artifacts
+.idea/
+.vscode/
+*.swp
+
+# Vercel
+.vercel/
+
