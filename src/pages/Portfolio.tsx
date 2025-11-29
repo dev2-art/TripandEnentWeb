@@ -1,7 +1,9 @@
 import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 import { useState } from "react";
 import { Button } from "../components/ui/button";
-
+import sports1 from "../public/img/sports1.jpg";
+import sports2 from "../public/img/sports2.jpg";
+import sports3 from "../public/img/sports3.jpg";
 export function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("all");
 
@@ -80,6 +82,27 @@ export function Portfolio() {
       image: "https://images.unsplash.com/photo-1637348318881-03b4c930a723?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwcGhvdG9ncmFwaHklMjBzaG9vdHxlbnwxfHx8fDE3NjQxNDQ3ODl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       description: "Professional commercial photography",
     },
+    {
+      id: 10,
+      category: "sports",
+      title: "sports Shoot",
+      image: sports1,
+      description: "sports photography",
+    },
+    {
+      id: 11,
+      category: "sports",
+      title: "sports coverage",
+      image: sports2,
+      description: "sports coverage photography",
+    },
+    // {
+    //   id: 12,
+    //   category: "Sports",
+    //   title: "Commercial Shoot",
+    //   image: "https://images.unsplash.com/photo-1637348318881-03b4c930a723?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwcGhvdG9ncmFwaHklMjBzaG9vdHxlbnwxfHx8fDE3NjQxNDQ3ODl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    //   description: "Professional commercial photography",
+    // },
   ];
 
   const filteredItems =
@@ -170,7 +193,7 @@ export function Portfolio() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Stats Section
       <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -198,7 +221,7 @@ export function Portfolio() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonial Section */}
       <section className="py-20 bg-black">

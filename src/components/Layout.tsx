@@ -30,10 +30,16 @@ export function Layout() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-lg border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
+            {/* Logo / Brand - responsive */}
             <Link to="/" className="flex items-center">
+              {/* Hide on sm and below */}
               <Logo className="hidden sm:block" />
-              <LogoCompact className="block sm:hidden" />
+              <LogoCompact className="hidden" />
+              {/* Trip Media text only on small devices - styled like logo */}
+              <span className="block sm:hidden text-[20px] font-semibold font-sans uppercase tracking-wider text-white leading-none">
+                TRIP
+                <span className="text-[#ea580c] ml-1">MEDIA</span>
+              </span>
             </Link>
 
             {/* Desktop Navigation */}

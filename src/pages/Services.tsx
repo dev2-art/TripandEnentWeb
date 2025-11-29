@@ -10,6 +10,9 @@ import brandingVideo from "../public/Branding.mp4";
 import travelVideo from "../public/Travelling.mp4";
 import sportsVideo from "../public/Sports.mp4";
 import DigitalMarketing from "../public/img/DigitalMarketing.jpg";
+import sports1 from "../public/img/sports1.jpg";
+import sports2 from "../public/img/sports2.jpg";
+import sports3 from "../public/img/sports3.jpg";
 
 export function Services() {
   const [currentCategory, setCurrentCategory] = useState(0);
@@ -56,12 +59,12 @@ export function Services() {
         },
         {
           name: "Product Photography",
-          image: "https://images.unsplash.com/photo-1719176010035-17729577d496?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9kdWN0JTIwcGhvdG9ncmFwaHklMjBsdXh1cnl8ZW58MXx8fHwxNzY0MTQ0NzkwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+          image: "https://images.unsplash.com/photo-1719176010035-17729577d496?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9kdWN0JTIwcGhvdG9ncmFpaHklMjBsdXh1cnl8ZW58MXx8fHwxNzY0MTQ0NzkwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
           description: "Stunning product imagery"
         },
         {
           name: "Fashion Photography",
-          image: "https://images.unsplash.com/photo-1727791719116-39761d569f32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwcGhvdG9ncmFwaHklMjBtb2RlbHxlbnwxfHx8fDE3NjQxMzc1OTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+          image: "https://images.unsplash.com/photo-1727791719116-39761d569f32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwcGhvdG9ncmFpaHklMjBtb2RlbHxlbnwxfHx8fDE3NjQxMzc1OTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
           description: "High-end fashion shoots"
         },
         {
@@ -167,17 +170,17 @@ export function Services() {
       services: [
         {
           name: "Event Coverage",
-          image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBldmVudCUyMHBob3RvZ3JhcGh5fGVufDF8fHx8MTc2NDIyNjc0MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+          image: sports1,
           description: "High-energy sports event documentation"
         },
         {
           name: "Team Photoshoot",
-          image: "https://images.unsplash.com/photo-1558618047-3c8c76ca6e94?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncm91cCUyMHRlYW0lMjBzcG9ydHMlMjBwaG90b3Nob290fGVufDF8fHx8MTc2NDIyNjc0MHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+          image: sports2,
           description: "Professional team and athlete shoots"
         },
         {
           name: "Action Video Production",
-          image: "https://images.unsplash.com/photo-1534801022146-8c4d03c9e174?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjB2aWRlbyUyMGFjdGlvbnxlbnwxfHx8fDE3NjQyMjY3NDF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+          image: sports3,
           description: "Dynamic sports video highlights"
         },
       ]
