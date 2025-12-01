@@ -7,6 +7,20 @@ import photographerImage from "../public/img/Photography.jpg";
 import creativeDirectorImage from "../public/img/Creative-Dire.jpg";
 import productionTeamImage from "../public/img/Production-team.jpg";
 
+// Letter animation
+const aboutLetterVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.05,
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+};
+
 export function About() {
   return (
     <div className="bg-[#0a0a0a] text-white">
@@ -32,9 +46,46 @@ export function About() {
               Our Story
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl mb-4 font-medium tracking-tight">
-              About <span className="text-[#ea580c]">TRIP MEDIA</span>
-            </h1>
+            {/* Animated Heading With Extra Space */}
+            <motion.h1
+              className="text-5xl md:text-6xl lg:text-7xl mb-4 font-medium tracking-tight"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.05 },
+                },
+              }}
+            >
+              {Array.from("About TRIP MEDIA").map((char, i) => {
+                
+                // Insert space AFTER "About" → after 5 characters
+                if (i === 5) {
+                  return (
+                    <span key="space" className="inline-block w-5"></span>
+                  );
+                }
+
+                const baseClass =
+                  char === " " ? "inline-block w-2" : "inline-block";
+
+                const highlightStart = 6; // TRIP MEDIA starts after the added space
+                const colorClass = i >= highlightStart ? " text-[#ea580c]" : "";
+
+                return (
+                  <motion.span
+                    key={i}
+                    className={baseClass + colorClass}
+                    variants={aboutLetterVariants}
+                    custom={i}
+                  >
+                    {char}
+                  </motion.span>
+                );
+              })}
+            </motion.h1>
 
             <p className="text-xl text-white/70">
               Dubai’s Premier Creative Production Studio

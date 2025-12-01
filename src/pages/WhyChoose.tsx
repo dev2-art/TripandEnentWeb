@@ -148,9 +148,52 @@ export function WhyChoose() {
         </div>
 
         <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl md:text-6xl mb-4">
-            Why Choose <span className="text-orange-500">TRIP MEDIA</span>
-          </h1>
+          <motion.h1
+            className="text-5xl md:text-6xl mb-4"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.05 },
+              },
+            }}
+          >
+            {Array.from("Why Choose TRIP MEDIA").map((char, i) => {
+              const baseClass =
+                char === " " ? "inline-block w-2" : "inline-block";
+              const textToColor = "TRIP MEDIA";
+              const fullText = "Why Choose TRIP MEDIA";
+              const highlightStart = fullText.indexOf(textToColor);
+              const colorClass =
+                highlightStart >= 0 && i >= highlightStart
+                  ? " text-orange-500"
+                  : "";
+
+              return (
+                <motion.span
+                  key={i}
+                  className={baseClass + colorClass}
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      transition: {
+                        delay: i * 0.05,
+                        duration: 0.5,
+                        ease: [0.22, 1, 0.36, 1],
+                      },
+                    },
+                  }}
+                  custom={i}
+                >
+                  {char}
+                </motion.span>
+              );
+            })}
+          </motion.h1>
           <p className="text-xl text-white/80">
             The reasons that make us Dubai's leading creative media studio
           </p>

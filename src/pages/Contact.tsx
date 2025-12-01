@@ -4,7 +4,22 @@ import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Label } from "../components/ui/label";
 import { useState } from "react";
+import { motion } from "motion/react";
 import { Mail, Phone, MapPin, MessageCircle, Send, Clock } from "lucide-react";
+
+// Letter animation variants like Services hero
+const contactLetterVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.05,
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+};
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -45,9 +60,41 @@ export function Contact() {
           <div className="absolute inset-0 bg-black/70"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl mb-4">
-            Get in <span className="text-orange-500">Touch</span>
-          </h1>
+          <motion.h1
+            className="text-5xl md:text-6xl mb-4"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.05 },
+              },
+            }}
+          >
+            {Array.from("Get in Touch").map((char, i) => {
+              const baseClass =
+                char === " " ? "inline-block w-2" : "inline-block";
+              const textToColor = "Touch";
+              const fullText = "Get in Touch";
+              const highlightStart = fullText.indexOf(textToColor);
+              const colorClass =
+                highlightStart >= 0 && i >= highlightStart
+                  ? " text-orange-500"
+                  : "";
+
+              return (
+                <motion.span
+                  key={i}
+                  className={baseClass + colorClass}
+                  variants={contactLetterVariants}
+                  custom={i}
+                >
+                  {char}
+                </motion.span>
+              );
+            })}
+          </motion.h1>
           <p className="text-xl text-white/80">
             Let's discuss your next project and bring your vision to life
           </p>

@@ -275,16 +275,21 @@ export function Services() {
               }
             }}
           >
-            {Array.from("Our Services").map((char, i) => (
-              <motion.span
-                key={i}
-                className={char === " " ? "inline-block w-4" : "inline-block"}
-                variants={letterVariants}
-                custom={i}
-              >
-                {char}
-              </motion.span>
-            ))}
+            {Array.from("Our Services").map((char, i) => {
+              const baseClass =
+                char === " " ? "inline-block w-4" : "inline-block";
+              const colorClass = i >= 4 ? " text-orange-500" : "";
+              return (
+                <motion.span
+                  key={i}
+                  className={baseClass + colorClass}
+                  variants={letterVariants}
+                  custom={i}
+                >
+                  {char}
+                </motion.span>
+              );
+            })}
           </motion.h1>
           <motion.p
             className="text-xl text-white/80"
