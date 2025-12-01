@@ -2,7 +2,7 @@ import { Link, Outlet, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
-import logo from "../public/img/logo.png";
+import logo2 from "../public/img/logo2.png";
 
 export function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,9 +34,9 @@ export function Layout() {
             <Link to="/" className="flex items-center gap-2">
               {/* Logo only from sm and up */}
               <img
-                src={logo}
+                src={logo2}
                 alt="TRIP MEDIA logo"
-                className="hidden sm:block h-10 w-10 rounded-full object-cover"
+                className="hidden sm:block h-16 w-14 rounded-full object-cover"
               />
               {/* Text always visible */}
               <span className="text-[18px] sm:text-[20px] font-semibold font-sans uppercase tracking-wider text-white leading-none">
@@ -117,7 +117,7 @@ export function Layout() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="md:col-span-2">
               <img
-                src={logo}
+                src={logo2}
                 alt="TRIP MEDIA"
                 className="mb-4 h-12 w-12 rounded-full object-cover"
               />
