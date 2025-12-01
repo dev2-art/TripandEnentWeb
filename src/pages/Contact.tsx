@@ -222,7 +222,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h3 className="text-xl mb-2">Phone</h3>
-                    <p className="text-white/70">+971564247927</p>
+                    <p className="text-white/70">+971527674008</p>
                     {/* <p className="text-white/70">+971 4 567 8901</p> */}
                   </div>
                 </div>
