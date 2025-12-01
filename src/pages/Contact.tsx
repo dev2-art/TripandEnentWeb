@@ -209,7 +209,7 @@ export function Contact() {
                   </div>
                 </div>
 
-                {/* Business Hours */}
+                {/* Business Hours
                 <div className="bg-black border border-white/10 rounded-lg p-6 flex items-start gap-4">
                   <div className="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Clock className="w-6 h-6 text-orange-500" />
@@ -224,7 +224,7 @@ export function Contact() {
                       Friday: Closed
                     </p>
                   </div>
-                </div>
+                </div> */}
 
                 {/* WhatsApp Button */}
                 <Button

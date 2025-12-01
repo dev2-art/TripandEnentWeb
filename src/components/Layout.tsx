@@ -2,7 +2,7 @@ import { Link, Outlet, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { Logo, LogoCompact } from "./Logo";
+import logo from "../public/img/logo.png";
 
 export function Layout() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -30,13 +30,16 @@ export function Layout() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0a0a0a]/95 backdrop-blur-lg border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo / Brand - responsive */}
-            <Link to="/" className="flex items-center">
-              {/* Hide on sm and below */}
-              <Logo className="hidden sm:block" />
-              <LogoCompact className="hidden" />
-              {/* Trip Media text only on small devices - styled like logo */}
-              <span className="block sm:hidden text-[20px] font-semibold font-sans uppercase tracking-wider text-white leading-none">
+            {/* Brand: text on small screens, logo + text on larger screens */}
+            <Link to="/" className="flex items-center gap-2">
+              {/* Logo only from sm and up */}
+              <img
+                src={logo}
+                alt="TRIP MEDIA logo"
+                className="hidden sm:block h-10 w-10 rounded-full object-cover"
+              />
+              {/* Text always visible */}
+              <span className="text-[18px] sm:text-[20px] font-semibold font-sans uppercase tracking-wider text-white leading-none">
                 TRIP
                 <span className="text-[#ea580c] ml-1">MEDIA</span>
               </span>
@@ -113,7 +116,11 @@ export function Layout() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div className="md:col-span-2">
-              <Logo className="mb-4" />
+              <img
+                src={logo}
+                alt="TRIP MEDIA"
+                className="mb-4 h-12 w-12 rounded-full object-cover"
+              />
               <p className="text-white/50 max-w-md mb-6">
                 Dubai's leading creative media & commercial production studio. We craft high-impact visuals that elevate brands, businesses & events.
               </p>
