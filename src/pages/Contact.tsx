@@ -47,6 +47,11 @@ export function Contact() {
     window.open("https://wa.me/971501234567", "_blank");
   };
 
+  // Heading config — make all spaces wider for visible gaps: "Get⎵in⎵Touch"
+  const fullHeading = "Get in Touch";
+  const textToColor = "Touch";
+  const highlightStart = fullHeading.indexOf(textToColor);
+
   return (
     <div className="bg-black text-white">
       {/* Hero Section */}
@@ -72,16 +77,13 @@ export function Contact() {
               },
             }}
           >
-            {Array.from("Get in Touch").map((char, i) => {
-              const baseClass =
-                char === " " ? "inline-block w-2" : "inline-block";
-              const textToColor = "Touch";
-              const fullText = "Get in Touch";
-              const highlightStart = fullText.indexOf(textToColor);
+            {Array.from(fullHeading).map((char, i) => {
+              // Make every space wider so gaps between words are visible:
+              // "Get⎵in⎵Touch"
+              const baseClass = char === " " ? "inline-block w-5" : "inline-block";
+
               const colorClass =
-                highlightStart >= 0 && i >= highlightStart
-                  ? " text-orange-500"
-                  : "";
+                highlightStart >= 0 && i >= highlightStart ? " text-orange-500" : "";
 
               return (
                 <motion.span
@@ -255,23 +257,6 @@ export function Contact() {
                     </p>
                   </div>
                 </div>
-
-                {/* Business Hours
-                <div className="bg-black border border-white/10 rounded-lg p-6 flex items-start gap-4">
-                  <div className="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Clock className="w-6 h-6 text-orange-500" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl mb-2">Business Hours</h3>
-                    <p className="text-white/70">
-                      Sunday - Thursday: 9:00 AM - 6:00 PM
-                      <br />
-                      Saturday: 10:00 AM - 4:00 PM
-                      <br />
-                      Friday: Closed
-                    </p>
-                  </div>
-                </div> */}
 
                 {/* WhatsApp Button */}
                 <Button

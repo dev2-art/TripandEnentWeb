@@ -133,6 +133,11 @@ export function WhyChoose() {
     { value: 98, suffix: "%", label: "Satisfaction Rate" },
   ];
 
+  // Heading text config
+  const fullHeading = "Why Choose TRIP MEDIA";
+  const textToColor = "TRIP MEDIA";
+  const highlightStart = fullHeading.indexOf(textToColor);
+
   return (
     <div className="bg-black text-white">
 
@@ -160,16 +165,13 @@ export function WhyChoose() {
               },
             }}
           >
-            {Array.from("Why Choose TRIP MEDIA").map((char, i) => {
-              const baseClass =
-                char === " " ? "inline-block w-2" : "inline-block";
-              const textToColor = "TRIP MEDIA";
-              const fullText = "Why Choose TRIP MEDIA";
-              const highlightStart = fullText.indexOf(textToColor);
+            {Array.from(fullHeading).map((char, i) => {
+              // Make every space larger so you get visible gaps after each word:
+              // "Why⎵Choose⎵TRIP⎵MEDIA"
+              const baseClass = char === " " ? "inline-block w-5" : "inline-block";
+
               const colorClass =
-                highlightStart >= 0 && i >= highlightStart
-                  ? " text-orange-500"
-                  : "";
+                highlightStart >= 0 && i >= highlightStart ? " text-orange-500" : "";
 
               return (
                 <motion.span
@@ -219,24 +221,23 @@ export function WhyChoose() {
         </div>
 
         {/* PLAYBACK CONTROLS */}
-   <div className="max-w-6xl ml-4 px-4 sm:px-6 lg:px-8 mt-6 flex flex-col gap-4 items-start">
-  <div className="flex flex-wrap items-center gap-4">
-    <button
-      onClick={togglePlay}
-      className="flex items-center gap-3 rounded-full bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/20"
-    >
-      {isPlaying ? <CiPause1 size={24} /> : <CiPlay1 size={24} />}
-    </button>
+        <div className="max-w-6xl ml-4 px-4 sm:px-6 lg:px-8 mt-6 flex flex-col gap-4 items-start">
+          <div className="flex flex-wrap items-center gap-4">
+            <button
+              onClick={togglePlay}
+              className="flex items-center gap-3 rounded-full bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/20"
+            >
+              {isPlaying ? <CiPause1 size={24} /> : <CiPlay1 size={24} />}
+            </button>
 
-    <button
-      onClick={toggleMute}
-      className="flex items-center gap-3 rounded-full bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/20"
-    >
-      {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
-    </button>
-  </div>
-</div>
-
+            <button
+              onClick={toggleMute}
+              className="flex items-center gap-3 rounded-full bg-white/10 px-5 py-3 text-sm font-medium text-white transition hover:bg-white/20"
+            >
+              {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+            </button>
+          </div>
+        </div>
       </section>
 
       {/* MAIN REASONS */}

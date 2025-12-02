@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import sports1 from "../public/img/sports1.jpg";
 import sports2 from "../public/img/sports2.jpg";
 import sports3 from "../public/img/sports3.jpg";
+
 // Letter animation variants like Services hero
 const portfolioLetterVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -38,63 +39,72 @@ export function Portfolio() {
       id: 1,
       category: "real-estate",
       title: "Luxury Villa Interior",
-      image: "https://images.unsplash.com/photo-1593696140826-c58b021acf8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY0MTM0MjU3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image:
+        "https://images.unsplash.com/photo-1593696140826-c58b021acf8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY0MTM0MjU3fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       description: "High-end residential property photography",
     },
     {
       id: 2,
       category: "fashion",
       title: "Fashion Editorial",
-      image: "https://images.unsplash.com/photo-1727791719116-39761d569f32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwcGhvdG9ncmFwaHklMjBtb2RlbHxlbnwxfHx8fDE3NjQxMzc1OTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image:
+        "https://images.unsplash.com/photo-1727791719116-39761d569f32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwcGhvdG9ncmFwaHklMjBtb2RlbHxlbnwxfHx8fDE3NjQxMzc1OTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       description: "Editorial fashion campaign for luxury brand",
     },
     {
       id: 3,
       category: "hospitality",
       title: "Fine Dining Experience",
-      image: "https://images.unsplash.com/photo-1758648207539-b40dd1f6b50e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3NwaXRhbGl0eSUyMHJlc3RhdXJhbnQlMjBlbGVnYW50fGVufDF8fHx8MTc2NDE0NDc5MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image:
+        "https://images.unsplash.com/photo-1758648207539-b40dd1f6b50e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3NwaXRhbGl0eSUyMHJlc3RhdXJhbnQlMjBlbGVnYW50fGVufDF8fHx8MTc2NDE0NDc5MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       description: "Restaurant and culinary photography",
     },
     {
       id: 4,
       category: "tourism",
       title: "Destination Showcase",
-      image: "https://images.unsplash.com/photo-1534443274343-c6200874852c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBkZXN0aW5hdGlvbiUyMHNjZW5pY3xlbnwxfHx8fDE3NjQxMjMzMzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image:
+        "https://images.unsplash.com/photo-1534443274343-c6200874852c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cmF2ZWwlMjBkZXN0aW5hdGlvbiUyMHNjZW5pY3xlbnwxfHx8fDE3NjQxMjMzMzF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       description: "Travel and tourism promotional content",
     },
     {
       id: 5,
       category: "corporate",
       title: "Corporate Event",
-      image: "https://images.unsplash.com/photo-1571645163064-77faa9676a46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBldmVudCUyMGJ1c2luZXNzfGVufDF8fHx8MTc2NDE0MzIxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image:
+        "https://images.unsplash.com/photo-1571645163064-77faa9676a46?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjBldmVudCUyMGJ1c2luZXNzfGVufDF8fHx8MTc2NDE0MzIxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       description: "Business conference coverage",
     },
     {
       id: 6,
       category: "weddings",
       title: "Luxury Wedding",
-      image: "https://images.unsplash.com/photo-1700062069869-0c59ff21fa3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB3ZWRkaW5nJTIwY2VyZW1vbnl8ZW58MXx8fHwxNzY0MTIwNjg0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image:
+        "https://images.unsplash.com/photo-1700062069869-0c59ff21fa3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjB3ZWRkaW5nJTIwY2VyZW1vbnl8ZW58MXx8fHwxNzY0MTIwNjg0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       description: "Destination wedding photography",
     },
     {
       id: 7,
       category: "real-estate",
       title: "Commercial Property",
-      image: "https://images.unsplash.com/photo-1721170628951-aa4bfa50be28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkdWJhaSUyMGNpdHlzY2FwZSUyMGNpbmVtYXRpY3xlbnwxfHx8fDE3NjQxNDQ3ODl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image:
+        "https://images.unsplash.com/photo-1721170628951-aa4bfa50be28?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkdWJhaSUyMGNpdHlzY2FwZSUyMGNpbmVtYXRpY3xlbnwxfHx8fDE3NjQxNDQ3ODl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       description: "Dubai commercial real estate",
     },
     {
       id: 8,
       category: "fashion",
       title: "Product Photography",
-      image: "https://images.unsplash.com/photo-1719176010035-17729577d496?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9kdWN0JTIwcGhvdG9ncmFwaHklMjBsdXh1cnl8ZW58MXx8fHwxNzY0MTQ0NzkwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image:
+        "https://images.unsplash.com/photo-1719176010035-17729577d496?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9kdWN0JTIwcGhvdG9ncmFwaHklMjBsdXh1cnl8ZW58MXx8fHwxNzY0MTQ0NzkwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       description: "Luxury product photography",
     },
     {
       id: 9,
       category: "corporate",
       title: "Commercial Shoot",
-      image: "https://images.unsplash.com/photo-1637348318881-03b4c930a723?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwcGhvdG9ncmFwaHklMjBzaG9vdHxlbnwxfHx8fDE3NjQxNDQ3ODl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+      image:
+        "https://images.unsplash.com/photo-1637348318881-03b4c930a723?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwcGhvdG9ncmFwaHklMjBzaG9vdHxlbnwxfHx8fDE3NjQxNDQ3ODl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       description: "Professional commercial photography",
     },
     {
@@ -111,13 +121,6 @@ export function Portfolio() {
       image: sports2,
       description: "sports coverage photography",
     },
-    // {
-    //   id: 12,
-    //   category: "Sports",
-    //   title: "Commercial Shoot",
-    //   image: "https://images.unsplash.com/photo-1637348318881-03b4c930a723?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwcGhvdG9ncmFwaHklMjBzaG9vdHxlbnwxfHx8fDE3NjQxNDQ3ODl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    //   description: "Professional commercial photography",
-    // },
   ];
 
   const filteredItems =
@@ -137,7 +140,9 @@ export function Portfolio() {
           />
           <div className="absolute inset-0 bg-black/70"></div>
         </div>
+
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* UPDATED HEADING WITH EXTRA SPACE */}
           <motion.h1
             className="text-5xl md:text-6xl mb-4"
             initial="hidden"
@@ -151,11 +156,14 @@ export function Portfolio() {
             }}
           >
             {Array.from("Our Portfolio").map((char, i) => {
+              // <<< UPDATED PART → add bigger width for space >>>
               const baseClass =
-                char === " " ? "inline-block w-2" : "inline-block";
+                char === " " ? "inline-block w-6" : "inline-block";
+
               const textToColor = "Portfolio";
               const fullText = "Our Portfolio";
               const highlightStart = fullText.indexOf(textToColor);
+
               const colorClass =
                 highlightStart >= 0 && i >= highlightStart
                   ? " text-orange-500"
@@ -173,6 +181,7 @@ export function Portfolio() {
               );
             })}
           </motion.h1>
+
           <p className="text-xl text-white/80">
             A showcase of our finest work across various industries
           </p>
@@ -240,37 +249,7 @@ export function Portfolio() {
         </div>
       </section>
 
-      {/* Stats Section
-      <section className="py-20 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl mb-4">Our Impact</h2>
-            <p className="text-xl text-white/60">
-              Numbers that speak to our expertise
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-5xl text-orange-500 mb-2">500+</div>
-              <div className="text-white/60">Projects Completed</div>
-            </div>
-            <div>
-              <div className="text-5xl text-orange-500 mb-2">200+</div>
-              <div className="text-white/60">Happy Clients</div>
-            </div>
-            <div>
-              <div className="text-5xl text-orange-500 mb-2">50+</div>
-              <div className="text-white/60">Awards Won</div>
-            </div>
-            <div>
-              <div className="text-5xl text-orange-500 mb-2">98%</div>
-              <div className="text-white/60">Client Satisfaction</div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* Testimonial Section */}
+      {/* Testimonials */}
       <section className="py-20 bg-black">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">

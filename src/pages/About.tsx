@@ -22,6 +22,10 @@ const aboutLetterVariants = {
 };
 
 export function About() {
+  const fullText = "About TRIP MEDIA";
+  const textToColor = "TRIP MEDIA";
+  const highlightStart = fullText.indexOf(textToColor);
+
   return (
     <div className="bg-[#0a0a0a] text-white">
       
@@ -46,7 +50,7 @@ export function About() {
               Our Story
             </div>
 
-            {/* Animated Heading With Extra Space */}
+            {/* Animated Heading with Extra Space Between TRIP & MEDIA */}
             <motion.h1
               className="text-5xl md:text-6xl lg:text-7xl mb-4 font-medium tracking-tight"
               initial="hidden"
@@ -59,19 +63,22 @@ export function About() {
                 },
               }}
             >
-              {Array.from("About TRIP MEDIA").map((char, i) => {
-                
-                // Insert space AFTER "About" → after 5 characters
-                if (i === 5) {
-                  return (
-                    <span key="space" className="inline-block w-5"></span>
-                  );
-                }
+              {Array.from(fullText).map((char, i) => {
+                const firstSpaceIndex = fullText.indexOf(" ");       // space after About
+                const secondSpaceIndex = fullText.indexOf(" ", firstSpaceIndex + 1); // space between TRIP & MEDIA
+
+                const isAboutTripSpace = i === firstSpaceIndex;
+                const isTripMediaSpace = i === secondSpaceIndex;
 
                 const baseClass =
-                  char === " " ? "inline-block w-2" : "inline-block";
+                  char === " "
+                    ? isTripMediaSpace
+                      ? "inline-block w-6" // BIGGER SPACE between TRIP & MEDIA
+                      : isAboutTripSpace
+                      ? "inline-block w-6"
+                      : "inline-block w-2"
+                    : "inline-block";
 
-                const highlightStart = 6; // TRIP MEDIA starts after the added space
                 const colorClass = i >= highlightStart ? " text-[#ea580c]" : "";
 
                 return (
